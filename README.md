@@ -1,6 +1,5 @@
 # sunburst_hasher
-
-This tool is a performant and parallel hash collision finder for the [sunburst malware](https://github.com/fireeye/sunburst_countermeasures). It brute forces all strings in a defined range and checks if any of the resulting hashes matches a hash from the provided input file.
+`sunburst_hasher` is a parallel hash collision finder for the [sunburst malware](https://github.com/fireeye/sunburst_countermeasures). It brute forces all strings in a defined range and checks if any of the resulting hashes matches a hash from the provided input file.
 
 
 
