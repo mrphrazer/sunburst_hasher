@@ -19,7 +19,7 @@ fn get_hash(s: &[u8]) -> u64 {
         num ^= *b as u64;
         num = num.wrapping_mul(1099511628211);
     }
-    num ^ 0x5BAC903BA7D81967
+    num
 }
 fn main() {
     let config = Config::from_args();
@@ -28,6 +28,8 @@ fn main() {
         .expect("Could not read file")
         .split('\n')
         .map(|s| s.parse::<u64>().expect("Could not parse convert to u64."))
+        // performance optimization: apply xor to the hash values
+        .map(|v| v ^ 0x5BAC903BA7D81967)
         .collect();
 
     let alphabet: Vec<u8> = "abcdefghijklmnopqrstuvwxyz0123456789-_."
