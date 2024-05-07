@@ -50,7 +50,7 @@ fn main() {
                 let h = get_hash(&bytes[..]);
                 if hashes.contains(&h) {
                     let s = std::str::from_utf8(&bytes[..]).unwrap();
-                    println!("{} -- {}", s, h);
+                    println!("{} -- {}", s, h ^ 0x5BAC903BA7D81967);
                 }
             });
         println!("\n\n");
